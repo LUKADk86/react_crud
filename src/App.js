@@ -15,13 +15,29 @@ class App extends React.Component{
   }
 //recuperer le cours
 updateCourse = (e)=>{
-  console.log(e.target.value)
+  this.setState({
+    current:e.target.value
+  })
 }
 addCourse = (e)=>{
-  console.log('hello')
+  
   e.preventDefault()
+  let cours = this.state.cours
+  let current = this.state.current
+  cours.push({nom: current});
+  this.setState({
+    cours: cours,
+    current: ''
+  })
 }
+deleteCourse = (index)=>{
+  let cours=this.state.cours;
+  cours.splice(index,1);
+  this.setState({
+    cours: cours
+  })
 
+}
 
 
   render() {
@@ -29,14 +45,14 @@ addCourse = (e)=>{
   const {cours} = this.state;
   const coursList = cours.map((cour, index)=>{
     //on passe le state.nom sous un props pour l'afficher en props dans le fichier courslist
-      return <CoursList details={cour} key={index}/>
+      return <CoursList details={cour} key={index} index={index} deleteCourse={this.deleteCourse}/>
   }       
   )
   return (
     <section className="App">
       <h1>Ajouter cours</h1>
-      <FormCours updateCourse={this.updateCourse} addCourse={this.addCourse}/>
-      {coursList}
+      <FormCours updateCourse={this.updateCourse} addCourse={this.addCourse} current={this.state.current}/>
+      <ul>{coursList}</ul>
     </section>
   );
   }
