@@ -22,13 +22,18 @@ class App extends React.Component {
   addCourse = (e) => {
 
     e.preventDefault()
+   
     let cours = this.state.cours
     let current = this.state.current
+    if(current!==""){
     cours.push({ nom: current });
+    
     this.setState({
       cours: cours,
       current: ''
     })
+  } 
+  return
   }
   deleteCourse = (index) => {
     let cours = this.state.cours;

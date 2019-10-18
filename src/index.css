@@ -1,13 +1,27 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: aqua;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.App{
+  background-color: beige;
+  width: 50%;
+  margin: auto;
+  box-shadow: 4px 4px 4px blue;
+}
+h1{
+  color: brown;
+}
+input{
+  width: 70%;
+  background-color: azure;
+}
+button{
+  width: 20%;
+  background-color: cornsilk;
+}
+span{
+  display: inline-block;
+  width: 30%;
+  padding-right: 20%;
 }
