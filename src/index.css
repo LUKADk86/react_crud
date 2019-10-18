@@ -6,14 +6,22 @@ body {
 .App{
   background-color: beige;
   width: 50%;
+  min-height: 300px;
   margin: auto;
   box-shadow: 4px 4px 4px blue;
+  margin-top: 50px;
 }
 h1{
-  color: brown;
+  color: aliceblue;;
+  background-color: darkgreen;
+  width: 80%;
+  margin: auto;
+  border: 2px solid bisque;
+
 }
 input{
   width: 70%;
+  margin-top: 3%;
   background-color: azure;
 }
 button{
